@@ -2,7 +2,7 @@
   <view class="container">
     <view :style="{width: 300, height: 450, backgroundColor: 'white', borderWidth: 0, borderRadius: 5, fontSize: 16,alignItems: 'center',
       justifyContent: 'center'}">
-      <nb-icon name="person" :style="{paddingBottom:40, fontSize: 160, color: '#4b99f4'}"/>
+      <ionicons name="md-checkmark" :size="160" :color="'#4b99f4'" :style="{paddingBottom:40}"/>
       <text class = "text-primary" :style="{paddingBottom:20}">ยืนยันตัวตนสำเร็จ</text>
       <touchable-opacity class="button-container" :on-press="goToHome">
         <text :style="{color: 'white'}">OK</text>
@@ -12,6 +12,8 @@
 </template>
 
 <script>
+import { Ionicons  } from '@expo/vector-icons';
+
 export default {
   props: {
     navigation: {
@@ -22,7 +24,8 @@ export default {
     goToHome() {
       this.navigation.navigate("Home");
     }
-  }
+  },
+  components: { Ionicons }
 }
 </script>
 
